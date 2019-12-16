@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Attack25</title>
+    <script type="text/javascript" src="main.js"></script>
+    <style>
+        :root {
+            --content-width: calc(var(--content-height) * 16 / 9);
+            --content-height: 47vh;
+            --grid-width: calc(var(--content-width) / 5);
+            --grid-height: calc(var(--content-height) / 5);
+
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: var(--content-width);
+            height: var(--content-height);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        li {
+            position: relative;
+            font-size: 26px;
+            background-color: lightgray;
+            vertical-align: middle;
+            text-align: center;
+            line-height: var(--grid-height);
+            /*border: solid 1px black;*/
+        }
+
+        img {
+            position: absolute;
+            width: var(--grid-width);
+            height: var(--grid-height);
+            top: 0;
+            left: 0;
+        }
+
+        div {
+            margin: 1vh;
+        }
+
+        #main {
+            position: relative;
+            width: var(--content-width);
+            height: var(--content-height);
+
+            border: solid 1px black;
+        }
+
+        #backVideo {
+            width: var(--content-width);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #control {
+            position: absolute;
+            left: calc(var(--content-width) + 40px);
+        }
+
+        #bigImage {
+            position: relative;
+            width: var(--content-width);
+            height: var(--content-height);
+        }
+
+        .big {
+            font-size: 300%;
+        }
+
+        .mid {
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="control">
+    <div class="mid"> Mode:<span id="displayMode"></span></div>
+    <div> 1:
+        <button onclick="modeChange(0)">画像を表示</button>
+    </div>
+    <div> 2:
+        <button onclick="modeChange(2)">Red</button>
+        <button onclick="modeChange(3)">Green</button>
+        <button onclick="modeChange(4)">White</button>
+        <button onclick="modeChange(5)">Blue</button>
+    </div>
+    <div>アタックチャンス:
+        <button onclick="modeChange(6)">色変更</button>
+        <button onclick="modeChange(7)">画像を表示</button>
+    </div>
+
+    <div> VTRクイズ:
+        <button onclick="modeChange(1)">消去モード</button>
+        <button onclick="videoPlay()">動画再生</button>
+    </div>
+    <div>エマージェンシー:
+        <button onclick="modeChange(9)">初期パネル色</button>
+        <button onclick="modeChange(8)">パネル再表示</button>
+    </div>
+</div>
+
+<div id="main">
+    <video id="backVideo" src="movie.mp4" preload="auto"></video>
+    <ul id="mainPanel">
+        <li id="li1" onclick="panelClick(1)"><img id="img1"> 1</li>
+        <li id="li2" onclick="panelClick(2)"><img id="img2"> 2</li>
+        <li id="li3" onclick="panelClick(3)"><img id="img3"> 3</li>
+        <li id="li4" onclick="panelClick(4)"><img id="img4"> 4</li>
+        <li id="li5" onclick="panelClick(5)"><img id="img5"> 5</li>
+        <li id="li6" onclick="panelClick(6)"><img id="img6"> 6</li>
+        <li id="li7" onclick="panelClick(7)"><img id="img7"> 7</li>
+        <li id="li8" onclick="panelClick(8)"><img id="img8"> 8</li>
+        <li id="li9" onclick="panelClick(9)"><img id="img9"> 9</li>
+        <li id="li10" onclick="panelClick(10)"><img id="img10">10</li>
+        <li id="li11" onclick="panelClick(11)"><img id="img11">11</li>
+        <li id="li12" onclick="panelClick(12)"><img id="img12">12</li>
+        <li id="li13" onclick="panelClick(13)"><img id="img13">13</li>
+        <li id="li14" onclick="panelClick(14)"><img id="img14">14</li>
+        <li id="li15" onclick="panelClick(15)"><img id="img15">15</li>
+        <li id="li16" onclick="panelClick(16)"><img id="img16">16</li>
+        <li id="li17" onclick="panelClick(17)"><img id="img17">17</li>
+        <li id="li18" onclick="panelClick(18)"><img id="img18">18</li>
+        <li id="li19" onclick="panelClick(19)"><img id="img19">19</li>
+        <li id="li20" onclick="panelClick(20)"><img id="img20">20</li>
+        <li id="li21" onclick="panelClick(21)"><img id="img21">21</li>
+        <li id="li22" onclick="panelClick(22)"><img id="img22">22</li>
+        <li id="li23" onclick="panelClick(23)"><img id="img23">23</li>
+        <li id="li24" onclick="panelClick(24)"><img id="img24">24</li>
+        <li id="li25" onclick="panelClick(25)"><img id="img25">25</li>
+    </ul>
+</div>
+<div>
+    <img id="bigImage">
+</div>
+
+</body>
+</html>
