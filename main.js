@@ -1,4 +1,4 @@
-var mode = 0;
+let mode = 0;
 
 // 動作モード変更 0: 画像表示 1: 表示消去, 2: RED, 3: GREEN 4: WHITE, 5: BLUE,
 //              6: アタックチャンス, 7: 画像表示(アタックチャンス), 8: パネル表示, 9: GRAY
@@ -50,13 +50,6 @@ function panelClick(i) {
     } else if (mode === 9) {
         changePanelGray(i)
     }
-}
-
-// クリック時のIDの代入
-function setId(i) {
-    id = i;
-    console.log(i);
-    document.getElementById('displayId').innerText = i;
 }
 
 // パネルの消去
