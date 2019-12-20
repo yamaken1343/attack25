@@ -86,6 +86,7 @@ function viewPanelImage(id) {
     i.src = './images/' + id + '.jpg';
     i.style.opacity = '1';
     b.src = './images/' + id + '.jpg';
+    playSound('img_opened');
 }
 
 // アタックチャンス時の画像を表示
@@ -101,6 +102,7 @@ function viewChancePanelImage(id) {
     i.style.opacity = '1';
     let b = document.getElementById('bigImage');
     b.src = './images/26.jpg';
+    playSound('img_opened');
 }
 
 // パネルの色を変更
@@ -112,6 +114,7 @@ function changePanelRed(id) {
     let imageId = 'img' + id;
     let i = document.getElementById(imageId);
     i.style.opacity = '0';
+    playSound('color_change')
 
 }
 
@@ -123,7 +126,7 @@ function changePanelBlue(id) {
     let imageId = 'img' + id;
     let i = document.getElementById(imageId);
     i.style.opacity = '0';
-
+    playSound('color_change')
 }
 
 function changePanelGreen(id) {
@@ -134,6 +137,7 @@ function changePanelGreen(id) {
     let imageId = 'img' + id;
     let i = document.getElementById(imageId);
     i.style.opacity = '0';
+    playSound('color_change')
 
 }
 
@@ -145,6 +149,7 @@ function changePanelWhite(id) {
     let imageId = 'img' + id;
     let i = document.getElementById(imageId);
     i.style.opacity = '0';
+    playSound('color_change')
 
 }
 
@@ -168,4 +173,13 @@ function changePanelChance(id) {
     let imageId = 'img' + id;
     let i = document.getElementById(imageId);
     i.style.opacity = '0';
+    playSound('attack_selected');
+}
+
+function playSound(id) {
+    a = document.getElementById(id);
+    if(a.currentTime != undefined){
+        a.currentTime = 0
+    }
+    a.play()
 }
